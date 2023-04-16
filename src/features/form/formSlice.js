@@ -12,6 +12,7 @@ export const fetchRecipes = createAsyncThunk(
 export const formSlice = createSlice({
     name: 'form',
     initialState: {
+        input: '',
         food: '',
         status: 'nothing',
         recipes: []
@@ -26,6 +27,12 @@ export const formSlice = createSlice({
         },
         deleteFood: (state) => {
             state.food = '';
+        },
+        inputChange: (state, action) => {
+            state.input = action.payload;
+        },
+        deleteInput: (state) => {
+            state.input = '';
         }
     },
     extraReducers: (builder) => {
@@ -43,8 +50,9 @@ export const formSlice = createSlice({
     }
 });
 
-export const { updateFood, deleteFood } = formSlice.actions;
+export const { updateFood, deleteFood, inputChange, deleteInput } = formSlice.actions;
 export default formSlice.reducer;
 export const selectFood = (state) => state.form.food;
 export const selectRecipes = (state) => state.form.recipes;
+export const selectInput = (state) => state.form.input;
 
