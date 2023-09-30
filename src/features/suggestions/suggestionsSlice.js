@@ -16,6 +16,9 @@ export const suggestionsSlice = createSlice({
         status: 'nothing'
     },
     reducers: {
+        deleteSuggestions: (state) => {
+            state.suggestions = [];
+        }
 
     },
     extraReducers: (builder) => {
@@ -33,5 +36,6 @@ export const suggestionsSlice = createSlice({
     }
 });
 
+export const { deleteSuggestions } = suggestionsSlice.actions;
 export default suggestionsSlice.reducer;
 export const selectSuggestions = (state) => state.suggestions.suggestions;
