@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchSuggestions, deleteSuggestions } from '../suggestions/suggestionsSlice';
 import { inputChange, selectInput } from "./formSlice";
+import { Suggestions } from '../suggestions/Suggestions';
 import { useEffect } from 'react';
 
 export function Form() {
@@ -21,12 +22,14 @@ export function Form() {
         <div>
             <input
                 aria-label="enter food"
+                id='textfield'
                 value={input}
                 onChange={(e) => {
                     dispatch(inputChange(e.target.value));
                 }
                 }
             />
+            <Suggestions />
         </div>
     )
 }

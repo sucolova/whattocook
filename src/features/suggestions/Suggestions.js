@@ -14,6 +14,7 @@ export const Suggestions = () => {
                 dispatch(updateFood(suggestion.name));
                 dispatch(deleteInput());
                 dispatch(deleteSuggestions());
+                document.getElementById("textfield").focus();
             }
             }
             key={uuid()}

@@ -2,7 +2,6 @@ import React from 'react';
 import { Form } from './features/form/Form';
 import './App.css';
 import { Results } from './features/results/Results';
-import { Suggestions } from './features/suggestions/Suggestions';
 import { Ingredients } from './features/ingredients/Ingredients';
 import { BottomButtons } from './features/bottomButtons/BottomButtons';
 
@@ -14,7 +13,6 @@ function App() {
                 <h1>What to cook?</h1>
                 <div className='formWrapper'>
                     <Form />
-                    <Suggestions />
                 </div>
                 <Ingredients />
             </header>
