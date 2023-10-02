@@ -32,8 +32,8 @@ export const suggestionsSlice = createSlice({
             })
             .addCase(fetchSuggestions.rejected, (state) => {
                 state.status = 'rejected';
-            });
-    }
+            })
+    },
 });
 
 export const { deleteSuggestions } = suggestionsSlice.actions;
