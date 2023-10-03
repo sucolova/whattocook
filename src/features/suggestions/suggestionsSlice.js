@@ -32,7 +32,7 @@ export const suggestionsSlice = createSlice({
             })
             .addCase(fetchSuggestions.rejected, (state) => {
                 state.status = 'rejected';
-            })
+            });
     },
 });
 
