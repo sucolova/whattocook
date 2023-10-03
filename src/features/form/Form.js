@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchSuggestions, deleteSuggestions } from '../suggestions/suggestionsSlice';
-import { inputChange, selectInput } from "./formSlice";
+import { deleteInput, inputChange, selectInput, updateFood } from "./formSlice";
 import { Suggestions } from '../suggestions/Suggestions';
 import { useEffect } from 'react';
 
@@ -28,6 +28,18 @@ export function Form() {
                     dispatch(inputChange(e.target.value));
                 }
                 }
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                        console.log('enter');
+                        console.log(e.target.value);
+                        dispatch(inputChange(e.target.value));
+                        dispatch(updateFood(e.target.value));
+                        dispatch(deleteInput());
+                        dispatch(deleteSuggestions());
+                        document.getElementById('textfield').focus();
+
+                    }
+                }}
             />
             <Suggestions />
         </div>

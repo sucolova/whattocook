@@ -9,15 +9,6 @@ export const fetchRecipes = createAsyncThunk(
     }
 );
 
-export const fetchIngredientName = createAsyncThunk(
-    'form/fetchIngredientName',
-    async (fetchString) => {
-        const response = await fetch(fetchString);
-        const json = await response.json();
-        return json;
-    }
-);
-
 
 export const formSlice = createSlice({
     name: 'form',
@@ -56,16 +47,6 @@ export const formSlice = createSlice({
                 state.recipes = action.payload;
             })
             .addCase(fetchRecipes.rejected, (state) => {
-                state.status = 'rejected';
-            })
-            .addCase(fetchIngredientName.pending, (state) => {
-                state.status = 'pending';
-            })
-            .addCase(fetchIngredientName.fulfilled, (state, action) => {
-                state.status = 'fulfilled';
-                state.ingredients.push(action.payload);
-            })
-            .addCase(fetchIngredientName.rejected, (state) => {
                 state.status = 'rejected';
             });
     }
