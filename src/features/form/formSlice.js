@@ -35,6 +35,9 @@ export const formSlice = createSlice({
         },
         deleteInput: (state) => {
             state.input = '';
+        },
+        deleteRecipes: (state) => {
+            state.recipes = [];
         }
     },
     extraReducers: (builder) => {
@@ -52,7 +55,7 @@ export const formSlice = createSlice({
     }
 });
 
-export const { updateFood, deleteFood, inputChange, deleteInput } = formSlice.actions;
+export const { updateFood, deleteFood, inputChange, deleteInput, deleteRecipes } = formSlice.actions;
 export default formSlice.reducer;
 export const selectFood = (state) => state.form.food;
 export const selectRecipes = (state) => state.form.recipes;

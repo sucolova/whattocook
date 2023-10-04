@@ -1,6 +1,11 @@
+# todo
+- if rejected alert check internet connection
+
 # problems to fix:
-- textfield hit enter to update foood
 - handle fulfilled but out of api points (api returns an object in that case)
+
+# solved problems:
+- textfield hit enter to update foood
 
 # Getting Started with Create React App and Redux
 

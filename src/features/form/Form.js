@@ -30,8 +30,6 @@ export function Form() {
                 }
                 onKeyDown={(e) => {
                     if (e.key === 'Enter') {
-                        console.log('enter');
-                        console.log(e.target.value);
                         dispatch(inputChange(e.target.value));
                         dispatch(updateFood(e.target.value));
                         dispatch(deleteInput());

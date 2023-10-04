@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { deleteFood, fetchRecipes, selectFood } from "../form/formSlice";
+import { deleteFood, deleteRecipes, fetchRecipes, selectFood } from "../form/formSlice";
 
 
 export function BottomButtons() {
@@ -20,6 +20,7 @@ export function BottomButtons() {
                 className="resetButton"
                 onClick={() => {
                     dispatch(deleteFood());
+                    dispatch(deleteRecipes());
                 }}
             >
                 restart
