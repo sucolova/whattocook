@@ -1,7 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchSuggestions, deleteSuggestions } from '../suggestions/suggestionsSlice';
 import { deleteInput, inputChange, selectInput, updateFood } from "./formSlice";
-import { Suggestions } from '../suggestions/Suggestions';
 import { useEffect } from 'react';
 
 export function Form() {
@@ -19,7 +18,7 @@ export function Form() {
     }, [input, dispatch, fetchSuggestionsString]);
 
     return (
-        <div>
+        <div id='form'>
             <input
                 aria-label="enter food"
                 id='textfield'
@@ -35,11 +34,9 @@ export function Form() {
                         dispatch(deleteInput());
                         dispatch(deleteSuggestions());
                         document.getElementById('textfield').focus();
-
                     }
                 }}
             />
-            <Suggestions />
         </div>
     )
 }

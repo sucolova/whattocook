@@ -3,23 +3,27 @@ import { Form } from './features/form/Form';
 import './App.css';
 import { Results } from './features/results/Results';
 import { Ingredients } from './features/ingredients/Ingredients';
-import { BottomButtons } from './features/bottomButtons/BottomButtons';
+import { Buttons } from './features/Buttons/Buttons';
+import { Suggestions } from './features/suggestions/Suggestions';
 
 function App() {
     return (
         <div className="App">
 
-            <header>
-                <h1>What to cook?</h1>
-                <div className='formWrapper'>
+            <body>
+                <header>
+                    <h1>What to cook?</h1>
                     <Form />
-                </div>
+                    <Buttons />
+                    <Suggestions />
+                </header>
                 <Ingredients />
-            </header>
-            <main>
-                <Results />
-                <BottomButtons />
-            </main>
+                <main>
+                    <Results />
+                </main>
+
+            </body>
+
         </div>
     );
 }
