@@ -16,47 +16,60 @@ export const Results = () => {
   useEffect(() => {
     setRecipesToRender(recipes
       ? recipes.map((recipe) => {
-        console.log(recipe.id, clickedId)
         if (clickedId === recipe.id) {
           return (
-            <div>
-              <h1>{fetchedRecipe.title}</h1>
-              <ul>
-                {fetchedRecipe.analyzedInstructions[0] ? fetchedRecipe.analyzedInstructions[0].steps.map((i) => {
-                  return <li>{i.step}</li>
-                }) : <p></p>}
-              </ul>
-            </div>
-          );
-        } else {
-          return (
-            <li key={recipe.id}>
-              <div>
+
+            <li>
+              <div className="dish" key={uuidv4()} onClick={() => {
+                setClickedId(recipe.id);
+                dispatch(fetchRecipe(recipe.id));
+              }}>
                 <h3>{recipe.title}</h3>
                 <img src={recipe.image} alt=""></img>
-                <p>used ingredients: {recipe.usedIngredientCount}</p>
+                <h4>used ingredients: {recipe.usedIngredientCount}</h4>
                 <ul>
                   {recipe.usedIngredients.map((i) => {
                     return <li key={uuidv4()}>{i.name}</li>;
                   })}
                 </ul>
-                <p>missed ingredients: {recipe.missedIngredientCount}</p>
+                <h4>missed ingredients: {recipe.missedIngredientCount}</h4>
                 <ul>
                   {recipe.missedIngredients.map((i) => {
                     return <li key={uuidv4()}>{i.name}</li>;
                   })}
                 </ul>
-                <button
-                  onClick={() => {
-                    setClickedId(recipe.id);
-                    dispatch(fetchRecipe(recipe.id));
-
-                  }}
-                >
-                  get the recipe
-                </button>
               </div>
-              <div></div>
+
+              <div className="recipe" key={uuidv4()}>
+                <ul>
+                  {fetchedRecipe.analyzedInstructions ? fetchedRecipe.analyzedInstructions[0].steps.map((i) => {
+                    return <li key={uuidv4()}>{i.step}</li>
+                  }) : <p></p>}
+                </ul>
+              </div>
+
+            </li>
+          );
+        } else {
+          return (
+            <li className="dish" key={uuidv4()} onClick={() => {
+              setClickedId(recipe.id);
+              dispatch(fetchRecipe(recipe.id));
+            }}>
+              <h3>{recipe.title}</h3>
+              <img src={recipe.image} alt=""></img>
+              <h4>used ingredients: {recipe.usedIngredientCount}</h4>
+              <ul>
+                {recipe.usedIngredients.map((i) => {
+                  return <li key={uuidv4()}>{i.name}</li>;
+                })}
+              </ul>
+              <h4>missed ingredients: {recipe.missedIngredientCount}</h4>
+              <ul>
+                {recipe.missedIngredients.map((i) => {
+                  return <li key={uuidv4()}>{i.name}</li>;
+                })}
+              </ul>
             </li>
           );
         }
@@ -64,5 +77,5 @@ export const Results = () => {
       : ""
     )
   }, [clickedId, recipes, dispatch, fetchedRecipe.title, fetchedRecipe.analyzedInstructions]);
-  return <ul>{recipesToRender}</ul>;
+  return <ul className="recipesAndDishesWrapper">{recipesToRender}</ul>;
 };

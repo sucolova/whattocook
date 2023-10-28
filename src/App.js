@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form } from './features/form/Form';
+import './index.css'
 import './App.css';
 import { Results } from './features/results/Results';
 import { Ingredients } from './features/ingredients/Ingredients';
@@ -10,19 +11,17 @@ function App() {
     return (
         <div className="App">
 
-            <body>
-                <header>
-                    <h1>What to cook?</h1>
-                    <Form />
-                    <Buttons />
-                    <Suggestions />
-                </header>
-                <Ingredients />
-                <main>
-                    <Results />
-                </main>
+            <header>
+                <h1>What to cook?</h1>
+                <Form />
+                <Buttons />
+                <Suggestions />
+            </header>
+            <Ingredients />
+            <main>
+                <Results />
+            </main>
 
-            </body>
 
         </div>
     );
