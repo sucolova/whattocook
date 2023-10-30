@@ -9,7 +9,7 @@ export function Buttons() {
     const input = useSelector(selectInput);
     let fetchIngredientsString = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${food}&number=10&apiKey=5bb6bc2b3c5a4b7c9d14ffbb0854d60b`;
     return (
-        <div className="Buttons">
+        <div className="buttons">
             <button
                 className="searchButton"
                 onClick={() => {

@@ -4,13 +4,18 @@ header {
 
 body {
   font-size: 16px;
+}
+
+* {
   box-sizing: border-box;
 }
 
 h1 {
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 3rem;
   color: red;
+  text-align: center;
+  margin: 1rem;
 }
 
 .recipesAndDishesWrapper {
@@ -26,14 +31,47 @@ h1 {
 }
 
 #textfield {
-  border-radius: 12px;
-  border: 5px solid black;
-  background-color: aqua;
-  width: 10rem;
-  height: 1.3rem;
+  border-radius: 30px;
+  border: 1px solid black;
+  background-color: transparent;
+  width: 19rem;
+  height: 2rem;
   font-size: 1.2rem;
   font-weight: bold;
   color: blue;
   padding-left: 2rem;
   padding-right: 2rem;
+  display: block;
+  margin: 0 auto;
+}
+
+#form {
+  position: relative;
+}
+
+.buttons {
+  margin: 0 auto;
+  width: max-content;
+  height: 0px;
+  position: absolute;
+  top: 0px;
+}
+
+.searchButton {
+  position: absolute;
+  width: max-content;
+  top: 4px;
+  left: 495px;
+}
+
+.addButton {
+  position: absolute;
+  top: 4px;
+  left: 300px;
+}
+
+.resetButton {
+  position: absolute;
+  top: 4px;
+  left: 330px;
 }

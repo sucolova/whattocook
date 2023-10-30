@@ -2,6 +2,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchSuggestions, deleteSuggestions } from '../suggestions/suggestionsSlice';
 import { deleteInput, inputChange, selectInput, updateFood } from "./formSlice";
 import { useEffect } from 'react';
+import { Buttons } from '../Buttons/Buttons.js'
+import { Suggestions } from '../suggestions/Suggestions';
 
 export function Form() {
     const input = useSelector(selectInput);
@@ -37,6 +39,8 @@ export function Form() {
                     }
                 }}
             />
+            < Suggestions />
+            <Buttons />
         </div>
     )
 }
