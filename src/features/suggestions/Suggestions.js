@@ -8,7 +8,7 @@ export const Suggestions = () => {
     const dispatch = useDispatch();
 
     const suggestionsToRender = suggestions ? suggestions.map(suggestion => {
-        return <button
+        return <button className="suggestionButton"
             onClick={() => {
                 dispatch(inputChange(suggestion.name));
                 dispatch(updateFood(suggestion.name));

@@ -12,8 +12,11 @@ export function Ingredients() {
 
 
     return (
-        <ul>
-            {foodToRender}
-        </ul>
+        <div className="ingredientsList">
+            <ul>
+                <h2>at Home:</h2>
+                {foodToRender}
+            </ul>
+        </div>
     )
 }

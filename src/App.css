@@ -10,12 +10,34 @@ body {
   box-sizing: border-box;
 }
 
+ul {
+  list-style-type: none;
+}
+
+.recipe ul {
+  list-style-type: disc;
+}
+
+.recipe ul li {
+  margin-left: 1rem;
+}
+
+.ingredientsList ul {
+  list-style-type: disc;
+}
+
+.ingredientsList li {
+  margin-left: 1.5rem;
+}
+
+
 h1 {
   font-weight: bold;
   font-size: 3rem;
-  color: red;
+  color: black;
   text-align: center;
   margin: 1rem;
+  font-family: Agbalumo;
 }
 
 .recipesAndDishesWrapper {
@@ -51,27 +73,41 @@ h1 {
 
 .buttons {
   margin: 0 auto;
-  width: max-content;
+  width: 19rem;
   height: 0px;
   position: absolute;
   top: 0px;
+  left: 50%;
 }
 
 .searchButton {
   position: absolute;
-  width: max-content;
-  top: 4px;
-  left: 495px;
+  top: 7px;
+  left: 110px;
 }
 
 .addButton {
   position: absolute;
-  top: 4px;
-  left: 300px;
+  top: 7px;
+  left: -145px;
 }
 
 .resetButton {
   position: absolute;
-  top: 4px;
-  left: 330px;
+  top: 7px;
+  left: 130px;
+}
+
+.suggestionsWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 16rem;
+  margin: 0 auto;
+}
+
+.suggestionButton {
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 30px;
+  height: 2rem;
 }
