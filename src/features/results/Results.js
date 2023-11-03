@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { selectRecipes } from "../form/formSlice";
 import { selectRecipe } from "./resultsSlice";
+import { selectRecipeStatus } from "./resultsSlice";
 import { useEffect, useState } from "react";
 import { fetchRecipe } from "./resultsSlice";
 import { v4 as uuid } from 'uuid';
@@ -11,6 +12,7 @@ export const Results = () => {
   const [recipesToRender, setRecipesToRender] = useState();
   const [clickedId, setClickedId] = useState();
   const dispatch = useDispatch();
+  const recipeStatus = useSelector(selectRecipeStatus);
 
 
   useEffect(() => {
@@ -40,8 +42,9 @@ export const Results = () => {
               </div>
 
               <div className="recipe" >
+                <h2>Recipe</h2>
                 <ul>
-                  {fetchedRecipe.analyzedInstructions[0].steps ? fetchedRecipe.analyzedInstructions[0].steps.map((i) => {
+                  {recipeStatus === 'fulfilled' && fetchedRecipe.analyzedInstructions[0].steps ? fetchedRecipe.analyzedInstructions[0].steps.map((i) => {
                     return <li key={uuid()}>{i.step}</li>
                   }) : <p></p>}
                 </ul>
@@ -75,6 +78,6 @@ export const Results = () => {
       })
       : ""
     )
-  }, [clickedId, recipes, dispatch, fetchedRecipe.title, fetchedRecipe.analyzedInstructions]);
+  }, [clickedId, recipes, dispatch, fetchedRecipe.title, fetchedRecipe.analyzedInstructions, recipeStatus]);
   return <ul className="recipesAndDishesWrapper">{recipesToRender}</ul>;
 };

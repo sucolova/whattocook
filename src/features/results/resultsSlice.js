@@ -12,7 +12,7 @@ export const fetchRecipe = createAsyncThunk(
 export const resultsSlice = createSlice({
     name: 'results',
     initialState: {
-        recipe: [],
+        recipe: false,
         status: 'nothing'
     },
     reducers: {
@@ -35,3 +35,4 @@ export const resultsSlice = createSlice({
 
 export default resultsSlice.reducer;
 export const selectRecipe = (state) => state.results.recipe;
+export const selectRecipeStatus = (state) => state.results.status;

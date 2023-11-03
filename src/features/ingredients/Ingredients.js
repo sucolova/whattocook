@@ -13,8 +13,8 @@ export function Ingredients() {
 
     return (
         <div className="ingredientsList">
+            <h2>at Home:</h2>
             <ul>
-                <h2>at Home:</h2>
                 {foodToRender}
             </ul>
         </div>

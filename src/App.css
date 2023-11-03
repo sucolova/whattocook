@@ -1,9 +1,23 @@
+:root {
+  --red: #E27D60;
+  --lightBlue: #85CDCB;
+  --orange: #E8A87C;
+  --wineRed: #C38D9E;
+  --darkBlue: #41B3A3;
+  font-size: 16px;
+}
+
 header {
-  background-color: pink;
+  background-color: var(--red);
+  width: 25rem;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  border-radius: 30px;
 }
 
 body {
-  font-size: 16px;
+  background-color: var(--lightBlue);
 }
 
 * {
@@ -36,19 +50,63 @@ h1 {
   font-size: 3rem;
   color: black;
   text-align: center;
-  margin: 1rem;
+  margin-bottom: 2rem;
   font-family: Agbalumo;
 }
 
 .recipesAndDishesWrapper {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 27rem;
   margin: 0 auto;
+  margin-top: 2rem;
 }
 
 .dish {
-  background-color: aqua;
+  background-color: var(--orange);
+  margin-bottom: 1rem;
+  border-radius: 30px;
+  padding: 1rem;
+}
+
+.dish img {
+  display: block;
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 30px;
+}
+
+.dish h3 {
+  font-family: Agbalumo;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.dish h4 {
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.dish ul {
+  list-style-type: disc;
+}
+
+.dish ul li {
+  margin-left: 3rem;
+}
+
+.recipe {
+  background-color: var(--darkBlue);
+  margin-bottom: 1rem;
+  border-radius: 30px;
+  padding: 1rem;
+}
+
+.recipe h2 {
+  font-family: Agbalumo;
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
@@ -58,13 +116,14 @@ h1 {
   background-color: transparent;
   width: 19rem;
   height: 2rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
-  color: blue;
+  color: black;
   padding-left: 2rem;
   padding-right: 2rem;
   display: block;
   margin: 0 auto;
+  margin-top: 1rem;
 }
 
 #form {
@@ -110,4 +169,20 @@ h1 {
   border: 1px solid black;
   border-radius: 30px;
   height: 2rem;
+}
+
+.ingredientsList {
+  background-color: var(--wineRed);
+  position: absolute;
+  top: 0px;
+  left: 1rem;
+  width: 12rem;
+  min-height: 12rem;
+  border-radius: 30px;
+  padding: 1rem;
+}
+
+.ingredientsList h2 {
+  font-family: Agbalumo;
+  font-size: 1.5rem;
 }

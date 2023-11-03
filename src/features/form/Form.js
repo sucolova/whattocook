@@ -24,6 +24,7 @@ export function Form() {
             <input
                 aria-label="enter food"
                 id='textfield'
+                placeholder='what do you have at home?'
                 value={input}
                 onChange={(e) => {
                     dispatch(inputChange(e.target.value));
