@@ -2,22 +2,20 @@
   --red: #E27D60;
   --lightBlue: #85CDCB;
   --orange: #E8A87C;
+  --lightOrange: #e9b593;
   --wineRed: #C38D9E;
   --darkBlue: #41B3A3;
   font-size: 16px;
 }
 
-header {
-  background-color: var(--red);
-  width: 25rem;
-  margin: 0 auto;
-  padding: 1rem;
-  padding-bottom: 2rem;
-  border-radius: 30px;
+html {
+  width: 100vw;
 }
 
 body {
   background-color: var(--lightBlue);
+  background-image: url('../colortheme/ing.jpg');
+  font-family: 'Fira Code';
 }
 
 * {
@@ -28,21 +26,7 @@ ul {
   list-style-type: none;
 }
 
-.recipe ul {
-  list-style-type: disc;
-}
 
-.recipe ul li {
-  margin-left: 1rem;
-}
-
-.ingredientsList ul {
-  list-style-type: disc;
-}
-
-.ingredientsList li {
-  margin-left: 1.5rem;
-}
 
 
 h1 {
@@ -54,12 +38,21 @@ h1 {
   font-family: Agbalumo;
 }
 
+/*recipes and dishes*/
+
 .recipesAndDishesWrapper {
   display: flex;
-  flex-direction: column;
-  width: 27rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-evenly;
+  width: 100vw;
   margin: 0 auto;
   margin-top: 2rem;
+}
+
+.recipesAndDishes {
+  width: 350px;
 }
 
 .dish {
@@ -67,6 +60,8 @@ h1 {
   margin-bottom: 1rem;
   border-radius: 30px;
   padding: 1rem;
+  cursor: pointer;
+  transition: background-color 1s;
 }
 
 .dish img {
@@ -97,6 +92,16 @@ h1 {
   margin-left: 3rem;
 }
 
+.dish:hover {
+  background-color: var(--lightOrange);
+}
+
+.dish:active {
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+
 .recipe {
   background-color: var(--darkBlue);
   margin-bottom: 1rem;
@@ -110,10 +115,29 @@ h1 {
   margin-bottom: 1rem;
 }
 
+.recipe ul {
+  list-style-type: disc;
+}
+
+.recipe ul li {
+  margin-left: 1rem;
+}
+
+/*searchbar*/
+
+header {
+  background-color: var(--red);
+  width: 25rem;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  border-radius: 0 0 30px 30px;
+}
+
 #textfield {
   border-radius: 30px;
   border: 1px solid black;
-  background-color: transparent;
+  background-color: var(--lightOrange);
   width: 19rem;
   height: 2rem;
   font-size: 1rem;
@@ -132,7 +156,7 @@ h1 {
 
 .buttons {
   margin: 0 auto;
-  width: 19rem;
+  width: 0px;
   height: 0px;
   position: absolute;
   top: 0px;
@@ -157,6 +181,8 @@ h1 {
   left: 130px;
 }
 
+/*suggestions*/
+
 .suggestionsWrapper {
   display: flex;
   flex-direction: column;
@@ -171,18 +197,46 @@ h1 {
   height: 2rem;
 }
 
+
+/*at home list*/
+
+.ingredientsList ul {
+  list-style-type: disc;
+}
+
+.ingredientsList li {
+  margin-left: 1.5rem;
+}
+
 .ingredientsList {
   background-color: var(--wineRed);
   position: absolute;
   top: 0px;
-  left: 1rem;
+  left: 0rem;
   width: 12rem;
-  min-height: 12rem;
-  border-radius: 30px;
+  min-height: 8rem;
+  border-radius: 0 0 30px 0;
   padding: 1rem;
 }
 
 .ingredientsList h2 {
   font-family: Agbalumo;
   font-size: 1.5rem;
+}
+
+
+@media screen and (max-width: 810px) {
+  .ingredientsList {
+    position: static;
+    margin: 0 auto;
+    border-radius: 30px;
+    margin-top: 1rem;
+    width: 25rem;
+    min-height: 2.3rem;
+  }
+
+  .ingredientsList ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }

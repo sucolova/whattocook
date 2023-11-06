@@ -20,7 +20,7 @@ export const Results = () => {
       ? recipes.map((recipe) => {
         if (clickedId === recipe.id) {
           return (
-            <li key={uuid()}>
+            <li className="recipesAndDishes" key={uuid()}>
               <div className="dish" onClick={() => {
                 setClickedId(recipe.id);
                 dispatch(fetchRecipe(recipe.id));
@@ -54,7 +54,7 @@ export const Results = () => {
           );
         } else {
           return (
-            <li key={uuid()} className="dish" onClick={() => {
+            <li key={uuid()} className="dish recipesAndDishes" onClick={() => {
               setClickedId(recipe.id);
               dispatch(fetchRecipe(recipe.id));
             }}>
