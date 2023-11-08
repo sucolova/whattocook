@@ -8,12 +8,13 @@ import { Ingredients } from './features/ingredients/Ingredients';
 function App() {
     return (
         <div className="App">
-
-            <header>
-                <h1>What to cook?</h1>
-                <Form />
-            </header>
-            <Ingredients />
+            <div className='top'>
+                <header>
+                    <h1>What to cook?</h1>
+                    <Form />
+                </header>
+                <Ingredients />
+            </div>
             <main>
                 <Results />
             </main>
